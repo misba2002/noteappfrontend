@@ -15,6 +15,7 @@ export default function LoginPage() {
      setError('');
     try {
     const res = await API.post('/auth/login', { email, password })
+       console.log("Response 👉", res.data);
     const token = res.data.token; // get it directly
     localStorage.setItem('token',token);
     console.log("user token", token);
@@ -22,6 +23,7 @@ export default function LoginPage() {
       router.push("/notes");
     }
     } catch (err) {
+      console.error("Login error 👉", err);
      setError(err.response?.data?.msg || "Login failed")
     }
   }
