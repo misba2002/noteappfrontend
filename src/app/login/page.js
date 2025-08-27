@@ -11,6 +11,7 @@ export default function LoginPage() {
 
   const handleLogin = async (e) => {
     e.preventDefault()
+     console.log("API baseURL 👉", API.defaults.baseURL);
      setError('');
     try {
     const res = await API.post('/auth/login', { email, password })
