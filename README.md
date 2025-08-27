@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+📝 NoteApp Frontend
 
-## Getting Started
+This is the frontend of the NoteApp project, built with Next.js, React, TailwindCSS, and connected to a Node.js/Express + MongoDB backend.
 
-First, run the development server:
+The app allows users to register, log in, and manage their personal notes securely using JWT authentication.
 
-```bash
+🚀 Features
+
+✅ User Authentication (Signup & Login with JWT) 
+
+✅ Protected Routes (Notes accessible only when logged in) 
+
+✅ Create, Read, Update, Delete (CRUD) Notes 
+
+✅ Responsive UI built with TailwindCSS 
+
+✅ Axios API client with token-based auth interceptor 
+
+✅ Environment-based API configuration 
+
+✅ Deployed on Vercel (Frontend) and Render (Backend) 
+
+
+🛠️ Tech Stack
+
+Frontend:
+
+Next.js
+
+React
+
+Tailwind CSS
+
+Axios
+
+Backend (separate repo):
+
+Node.js, Express.js, MongoDB, JWT
+
+⚙️ Setup Instructions
+1. Clone the repository
+git clone [https://github.com/misba2002/noteapp-frontend.git](https://github.com/misba2002/noteappfrontend/tree/main)
+
+cd noteapp-frontend
+
+3. Install dependencies
+npm install
+
+4. Environment Variables
+
+Create a .env.local file in the root with:
+
+NEXT_PUBLIC_API_URL=https://noteapp-backend-emvn.onrender.com
+
+4. Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+App will be available at http://localhost:3000
+.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+📦 Build & Deployment
+Build for production
+npm run build
+npm run start
 
-## Learn More
+Deployment
 
-To learn more about Next.js, take a look at the following resources:
+Frontend: Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Backend: Render
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Make sure to set the NEXT_PUBLIC_API_URL in Vercel project settings to point to your deployed backend.
 
-## Deploy on Vercel
+📂 Project Structure
+src/
+ |
+ ├── app/ 
+ │    ├── login/
+ |    |                    # Login page
+ |    |
+ │    ├── signup/          # Signup page
+ |    |
+ │    ├── notes/           # Protected notes page
+ |    |
+ │    └── layout.tsx       # Global layout
+ |
+ │
+ ├── components/           # Shared components (Navbar, NoteCard, etc.)
+ |
+ ├── utils/api.js          # Axios instance with JWT interceptor
+ |
+ ├── styles/               # Global styles
+ 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🔑 Authentication Flow
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+User signs up or logs in → Backend returns JWT
+
+JWT is stored in localStorage
+
+Axios interceptor attaches JWT to every request
+
+Protected routes redirect to /login if no token is found
+
+🖼️ Screenshots 
+
+Login Page..comming soon
+
+Notes Dashboard
+
+✅ Checklist
+
+ User Login & Signup with validation
+
+ JWT stored and applied via interceptor
+
+ Notes CRUD pages
+
+ Responsive Tailwind UI
+
+ Deployment to Vercel & Render
