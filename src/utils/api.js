@@ -9,7 +9,7 @@ const tokencurrent = localStorage.getItem("token");
  if (tokencurrent){
   req.headers.Authorization = `Bearer ${tokencurrent}`;
   console.log("current token",tokencurrent)
-  return req;
+ 
  } 
   return req; 
 });
