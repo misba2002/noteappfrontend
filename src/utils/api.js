@@ -3,6 +3,8 @@ import axios from "axios";
 const API = axios.create({ baseURL: `${process.env.NEXT_PUBLIC_API_URL}` });
 
 API.interceptors.request.use((req) => {
+ console.log("API baseURL 👉", API.defaults.baseURL);
+
 const tokencurrent = localStorage.getItem("token");
  if (tokencurrent){
   req.headers.Authorization = `Bearer ${tokencurrent}`;
