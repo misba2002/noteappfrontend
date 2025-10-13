@@ -55,6 +55,9 @@ NEXT_PUBLIC_API_URL=https://noteapp-backend-emvn.onrender.com
 4. Run development server
 npm run dev
 
+5.Quick veiw Frontend link : https://vercel.com/misbas-projects-d8f8819b?repo=https://github.com/misba2002/noteappfrontend
+(Note:make sure backend in ruuning on link:https://noteapp-backend-emvn.onrender.com for frontend to work)
+
 
 App will be available at http://localhost:3000
 .
